@@ -116,7 +116,15 @@ var BLIP_GAMES = {
   // A bullet-weaving shooter: fine nudges. A small dead zone, a long pivot
   // leash so re-centring neutralises, and a firm notch so a dodge holds.
   sky_raider:         { name: 'RAIDER', accent: '50, 100, 220',
-                         stick: { engage: 11, release: 6, maxR: 58, hyst: 12 } }
+                         stick: { engage: 11, release: 6, maxR: 58, hyst: 12 } },
+  // Viper-inspired trail arena: relative left/right turns, passable dim gaps.
+  // Space only starts/restarts; J joins player two. Drag steers by horizontal position.
+  adder:              { name: 'ADDER', accent: '224, 160, 52',
+                         players: 2,
+                         buttons: [{ key: ' ', code: 'Space', label: 'START' }],
+                         keys: TWO_PLAYER_KEYS,
+                         touch: { kind: 'drag', hint: 'Drag left/right to steer &middot; tap to start',
+                                  mouseHint: 'Point left/right to steer &middot; click to start' } }
 };
 
 // Pick out the game slug from a shell-page URL, e.g. "/blip/serpent/index.html"
